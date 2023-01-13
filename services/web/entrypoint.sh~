@@ -1,0 +1,3 @@
+#!/bin/sh
+python hello.py create_db
+exec "$@"
