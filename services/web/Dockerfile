@@ -12,9 +12,12 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r requirements.txt
 # copy every content from the local file to the image
-COPY . /usr/src/app/
+COPY ./ /usr/src/app/
 # make sure entrypoint has permissions
 RUN chmod +x entrypoint.sh
+#expose port 5000
+EXPOSE 5000
 # configure the container to run in an executed manner
 ENTRYPOINT [ "/usr/src/app/entrypoint.sh" ]
+
 
